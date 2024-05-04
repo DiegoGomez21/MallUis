@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Perfil
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Perfil\ here.\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=nombre\ horario\ ubicacion
+comment1.target=Perfil(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Perfil\r\n
+comment2.params=
+comment2.target=java.lang.String\ getNombre()
+comment3.params=nombre
+comment3.target=void\ setNombre(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ getHorario()
+comment5.params=horario
+comment5.target=void\ setHorario(java.lang.String)
+comment6.params=
+comment6.target=java.lang.String\ getUbicacion()
+comment7.params=ubicacion
+comment7.target=void\ setUbicacion(java.lang.String)
+comment8.params=nombre\ precio\ categoria\ disponible\ cantidad_dis
+comment8.target=void\ agregarProducto(java.lang.String,\ int,\ java.lang.String,\ boolean,\ int)
+comment9.params=
+comment9.target=java.util.List\ getProductos()
+numComments=10
