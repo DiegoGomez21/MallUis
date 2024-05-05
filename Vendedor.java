@@ -18,9 +18,11 @@ public class Vendedor extends Usuario
         super(nombre,correo,telefono);
     }
 
-    public void crearPerfil(String nombre, String horario, String ubicacion){
+    public Perfil crearPerfil(String nombre, String horario, String ubicacion){
         Perfil perfil = new Perfil(nombre, horario, ubicacion);
         this.perfil = perfil;
+        System.out.println("Se creó el perfil " + perfil.getNombre() + " del vendedor "+ this.getNombre());
+        return perfil;
     }
     
     public Perfil getPerfil() {

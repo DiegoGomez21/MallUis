@@ -13,17 +13,19 @@ public class Producto
     private String categoria;
     private boolean disponible;
     private int cantidad_dis;
+    private Perfil perfil;
 
     /**
      * Constructor for objects of class Producto
      */
-    public Producto(String nombre, int precio, String categoria, boolean disponible, int cantidad_dis)
+    public Producto(String nombre, int precio, String categoria, boolean disponible, int cantidad_dis, Perfil perfil)
     {
         this.nombre = nombre;
         this.precio = precio;
         this.categoria = categoria;
         this.disponible = disponible;
         this.cantidad_dis = cantidad_dis;
+        this.perfil = perfil;
     }
 
     public String getNombre(){
@@ -64,5 +66,9 @@ public class Producto
     
     public void setCantidad(int cantidad_dis){
         this.cantidad_dis = cantidad_dis;
+    }
+    
+    public Perfil getPerfil(){
+        return perfil;
     }
 }

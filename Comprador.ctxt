@@ -8,4 +8,6 @@ comment2.params=
 comment2.target=int\ getSaldo()
 comment3.params=saldo
 comment3.target=void\ setSaldo(int)
-numComments=4
+comment4.params=
+comment4.target=CarroCompras\ crearCarroCompras()
+numComments=5

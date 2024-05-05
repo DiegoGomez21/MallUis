@@ -1,13 +1,19 @@
 #BlueJ class context
 comment0.target=CarroCompras
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ CarroCompras\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=producto
-comment1.target=CarroCompras(Producto)
+comment1.params=comprador
+comment1.target=CarroCompras(Comprador)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ CarroCompras\r\n
-comment2.params=producto
-comment2.target=void\ agregarProducto(Producto)
+comment2.params=producto\ cantidad
+comment2.target=void\ agregarProducto(Producto,\ int)
 comment3.params=producto
 comment3.target=void\ eliminarProducto(Producto)
 comment4.params=
-comment4.target=java.util.List\ getProductos()
-numComments=5
+comment4.target=java.util.Map\ getProductos()
+comment5.params=
+comment5.target=double\ calcularTotal()
+comment6.params=
+comment6.target=Comprador\ getComprador()
+comment7.params=metodoPago\ estado
+comment7.target=java.util.List\ hacerPedidos(java.lang.String,\ java.lang.String)
+numComments=8

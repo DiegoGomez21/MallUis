@@ -25,5 +25,13 @@ public class Comprador extends Usuario
     
     public void setSaldo(int saldo) {
         this.saldo = saldo;
+        System.out.println("Se ha establecido un saldo de "+saldo+" para "+this.getNombre());
     }
+    
+    public CarroCompras crearCarroCompras() {
+        CarroCompras carro = new CarroCompras(this);
+        System.out.println("El comprador "+this.getNombre()+" creo un carro de compras");
+        return carro;
+    }
+
 }

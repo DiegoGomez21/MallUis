@@ -1,13 +1,15 @@
 #BlueJ class context
 comment0.target=Producto
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Producto\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=nombre\ precio\ categoria\ disponible\ cantidad_dis
-comment1.target=Producto(java.lang.String,\ int,\ java.lang.String,\ boolean,\ int)
+comment1.params=nombre\ precio\ categoria\ disponible\ cantidad_dis\ perfil
+comment1.target=Producto(java.lang.String,\ int,\ java.lang.String,\ boolean,\ int,\ Perfil)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Producto\r\n
 comment10.params=
 comment10.target=int\ getCantidad()
 comment11.params=cantidad_dis
 comment11.target=void\ setCantidad(int)
+comment12.params=
+comment12.target=Perfil\ getPerfil()
 comment2.params=
 comment2.target=java.lang.String\ getNombre()
 comment3.params=nombre
@@ -24,4 +26,4 @@ comment8.params=
 comment8.target=boolean\ getDisponible()
 comment9.params=disponible
 comment9.target=void\ setDisponible(boolean)
-numComments=12
+numComments=13

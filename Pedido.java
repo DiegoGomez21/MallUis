@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 /**
  * Write a description of class Pedido here.
  * 
@@ -9,31 +11,51 @@ import java.util.List;
 public class Pedido
 {
     // instance variables - replace the example below with your own
-    private Vendedor vendedor;
+    private Perfil perfil;
     private Comprador comprador;
-    private List<Producto> productos;
-    private int precioTotal;
+    private Map<Producto, Integer> productos;
+    private double precioTotal;
     private String metodoPago;
     private String estado;
-
     /**
      * Constructor for objects of class Pedido
      */
-    public Pedido(Vendedor vendedor, Comprador comprador, CarroCompras carrito, int precioTotal, String metodoPago, String estado) {
-        this.vendedor = vendedor;
-        this.comprador = comprador;
+    public Pedido(Perfil perfil, CarroCompras carrito, String metodoPago, String estado) {
+        this.perfil = perfil;
+        this.comprador = carrito.getComprador();
         this.productos = carrito.getProductos();
-        this.precioTotal = precioTotal;
+        this.precioTotal = this.calcularPrecioTotal();
         this.metodoPago = metodoPago;
         this.estado = estado;
+        System.out.println("Se ha generado un pedido para "+comprador.getNombre()+" por un valor de "+precioTotal);
+    }
+    
+    public void agregarProducto(Producto producto, int cantidad) {
+        if (productos.containsKey(producto)) {
+            int cantidadExistente = productos.get(producto);
+            productos.put(producto, cantidadExistente + cantidad);
+        } else {
+            productos.put(producto, cantidad);
+        }
+        precioTotal = calcularPrecioTotal();
     }
 
-    public Vendedor getVendedor() {
-        return vendedor;
+    private double calcularPrecioTotal() {
+        double total = 0;
+        for (Map.Entry<Producto, Integer> entry : productos.entrySet()) {
+            Producto producto = entry.getKey();
+            int cantidad = entry.getValue();
+            total += producto.getPrecio() * cantidad;
+        }
+        return total;
     }
 
-    public void setVendedor(Vendedor vendedor) {
-        this.vendedor = vendedor;
+    public Perfil getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(Perfil perfil) {
+        this.perfil = perfil;
     }
 
     public Comprador getComprador() {
@@ -44,15 +66,15 @@ public class Pedido
         this.comprador = comprador;
     }
 
-    public List<Producto> getProductos() {
+    public Map<Producto, Integer> getProductos() {
         return productos;
     }
 
-    public void setProductos(List<Producto> productos) {
+    public void setProductos(Map<Producto, Integer> productos) {
         this.productos = productos;
     }
 
-    public int getPrecioTotal() {
+    public double getPrecioTotal() {
         return precioTotal;
     }
 
