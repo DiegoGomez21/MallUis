@@ -49,8 +49,12 @@ public class Perfil
         this.ubicacion = ubicacion;
     }
     
-    public void agregarProducto(String nombre, int precio, String categoria, boolean disponible, int cantidad_dis){
+    public void crearProducto(String nombre, int precio, String categoria, boolean disponible, int cantidad_dis){
         Producto producto = new Producto(nombre,precio,categoria,disponible,cantidad_dis);
+        productos.add(producto);
+    }
+    
+    public void agregarProducto(Producto producto){
         productos.add(producto);
     }
     

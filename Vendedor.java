@@ -19,7 +19,8 @@ public class Vendedor extends Usuario
     }
 
     public void crearPerfil(String nombre, String horario, String ubicacion){
-        this.perfil = new Perfil(nombre, horario, ubicacion);
+        Perfil perfil = new Perfil(nombre, horario, ubicacion);
+        this.perfil = perfil;
     }
     
     public Perfil getPerfil() {
