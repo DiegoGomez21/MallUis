@@ -1,4 +1,8 @@
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 /**
  * Write a description of class Comprador here.
  * 
@@ -28,10 +32,24 @@ public class Comprador extends Usuario
         System.out.println("Se ha establecido un saldo de "+saldo+" para "+this.getNombre());
     }
     
-    public CarroCompras crearCarroCompras() {
+    public CarroCompras crearCarroCompras(Producto producto, int cantidad) {
         CarroCompras carro = new CarroCompras(this);
         System.out.println("El comprador "+this.getNombre()+" creo un carro de compras");
+        carro.agregarProducto(producto,cantidad);
         return carro;
     }
-
+    
+    public void agregarProductoCarro(CarroCompras carro, Producto producto, int cantidad) {
+        carro.agregarProducto(producto, cantidad);
+    }
+    
+    public void eliminarProductoCarro(CarroCompras carro, Producto producto) {
+        carro.eliminarProducto(producto);
+    }
+    
+    public List<Pedido> crearPedido(CarroCompras carrito, String metodoPago){
+        List<Pedido> pedidos = carrito.hacerPedidos(metodoPago);
+        System.out.println("El comprador "+this.getNombre()+" ha realizado un pedido");
+        return pedidos;
+    }
 }

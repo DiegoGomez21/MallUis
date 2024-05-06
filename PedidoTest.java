@@ -57,5 +57,12 @@ public class PedidoTest
         
         assertEquals(1, pedido.getProductos().size());
         assertEquals(5*20000, pedido.getPrecioTotal());
+        
+        vendedor = null;
+        perfil1 = null;
+        producto1 = null;
+        comprador = null;
+        carro = null;
+        pedido = null;
     }
 }

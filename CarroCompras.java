@@ -46,37 +46,34 @@ public class CarroCompras {
         return productos;
     }
     
-    public double calcularTotal() {
-        double total = 0.0;
-        for (Producto producto : productos.keySet()) {
-            int cantidad = productos.get(producto);
-            total += producto.getPrecio() * cantidad;
-        }
-        return total;
-    }
-    
     public Comprador getComprador(){
         return comprador;
     }
     
-    public List<Pedido> hacerPedidos(String metodoPago, String estado) {
+    public List<Pedido> hacerPedidos(String metodoPago) {
         List<Pedido> pedidos = new ArrayList<>();
-        Perfil perfilActual = null;
-        Pedido pedidoActual = null;
+        Map<Perfil, Pedido> pedidosPorPerfil = new HashMap<>();
 
-        for (Producto producto : productos.keySet()) {
-            int cantidad = productos.get(producto);
+        for (Map.Entry<Producto, Integer> entry : productos.entrySet()) {
+            Producto producto = entry.getKey();
+            int cantidad = entry.getValue();
             Perfil perfil = producto.getPerfil();
-
-            if (perfilActual == null || !perfil.equals(perfilActual)) {
-                pedidoActual = new Pedido(perfil, this, metodoPago, estado);
-                pedidos.add(pedidoActual);
-                perfilActual = perfil;
+    
+            // Si ya hay un pedido para este perfil, lo obtenemos
+            Pedido pedido = pedidosPorPerfil.getOrDefault(perfil, null);
+    
+            // Si no existe un pedido para este perfil, creamos uno nuevo
+            if (pedido == null) {
+                pedido = new Pedido(perfil, this, metodoPago);
+                pedidosPorPerfil.put(perfil, pedido);
+                pedidos.add(pedido); // Agregamos el pedido a la lista de pedidos
             }
-
-            pedidoActual.agregarProducto(producto, cantidad);
+    
+            // Agregamos el producto al pedido correspondiente
+            pedido.agregarProducto(producto, cantidad);
         }
-
+    
         return pedidos;
     }
+
 }

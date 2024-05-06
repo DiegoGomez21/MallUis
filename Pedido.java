@@ -20,14 +20,13 @@ public class Pedido
     /**
      * Constructor for objects of class Pedido
      */
-    public Pedido(Perfil perfil, CarroCompras carrito, String metodoPago, String estado) {
+    public Pedido(Perfil perfil, CarroCompras carrito, String metodoPago) {
         this.perfil = perfil;
         this.comprador = carrito.getComprador();
-        this.productos = carrito.getProductos();
-        this.precioTotal = this.calcularPrecioTotal();
         this.metodoPago = metodoPago;
-        this.estado = estado;
-        System.out.println("Se ha generado un pedido para "+comprador.getNombre()+" por un valor de "+precioTotal);
+        productos = new HashMap<>();
+        estado = "En curso";
+        System.out.println("Se ha generado un pedido para "+comprador.getNombre());
     }
     
     public void agregarProducto(Producto producto, int cantidad) {
