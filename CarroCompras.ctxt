@@ -16,4 +16,6 @@ comment6.params=
 comment6.target=Comprador\ getComprador()
 comment7.params=metodoPago
 comment7.target=java.util.List\ hacerPedidos(java.lang.String)
-numComments=8
+comment8.params=
+comment8.target=java.util.List\ hacerPedidos()
+numComments=9

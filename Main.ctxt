@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Main
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Main\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=compradores
+comment2.target=Comprador\ ingresarComprador(java.util.ArrayList)
+comment3.params=vendedores
+comment3.target=Vendedor\ ingresarVendedor(java.util.ArrayList)
+comment4.params=compradorMenu\ productos\ nuevosPedidos
+comment4.target=java.util.List\ menuComprador(Comprador,\ java.util.ArrayList,\ java.util.List)
+comment5.params=vendedorMenu\ nuevosPedidos
+comment5.target=void\ menuVendedor(Vendedor,\ java.util.List)
+numComments=6

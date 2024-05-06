@@ -12,6 +12,8 @@ public class Comprador extends Usuario
 {
     // instance variables - replace the example below with your own
     private int saldo;
+    private List<Pedido> pedidos;
+    private CarroCompras carro;
 
     /**
      * Constructor for objects of class Comprador
@@ -50,5 +52,13 @@ public class Comprador extends Usuario
         List<Pedido> pedidos = carrito.hacerPedidos(metodoPago);
         System.out.println("El comprador "+this.getNombre()+" ha realizado un pedido");
         return pedidos;
+    }
+    
+    public List<Pedido> getPedidos(){
+        return pedidos;
+    }
+    
+    public Map<Producto, Integer> getProductosCarrito(){
+        return carro.getProductos();
     }
 }

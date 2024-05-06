@@ -12,6 +12,7 @@ public class CarroCompras {
     
     private Map<Producto, Integer> productos;
     private Comprador comprador;
+    private List<Pedido> pedidos = new ArrayList<>();
     
     /**
     * Constructor for objects of class CarroCompras
@@ -77,6 +78,10 @@ public class CarroCompras {
             pedidoActual.agregarProducto(producto, cantidad);
         }
 
+        return pedidos;
+    }
+    
+    public List<Pedido> hacerPedidos() {
         return pedidos;
     }
     

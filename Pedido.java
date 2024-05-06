@@ -24,10 +24,10 @@ public class Pedido
         this.perfil = perfil;
         this.comprador = carrito.getComprador();
         this.productos = carrito.getProductos();
-        this.precioTotal = this.calcularPrecioTotal();
+        this.precioTotal = calcularPrecioTotal();
         this.metodoPago = metodoPago;
         estado = "En curso";
-        System.out.println("Se ha generado un pedido para "+comprador.getNombre()+" por un valor de "+precioTotal);
+        System.out.println("Se ha generado un pedido para "+comprador.getNombre());
     }
     
     public void agregarProducto(Producto producto, int cantidad) {
